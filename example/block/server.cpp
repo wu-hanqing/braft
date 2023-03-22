@@ -21,7 +21,7 @@
 #include <braft/raft.h>                 // braft::Node braft::StateMachine
 #include <braft/storage.h>              // braft::SnapshotWriter
 #include <braft/util.h>                 // braft::AsyncClosureGuard
-#include "block.pb.h"                   // BlockService
+#include "example/block/block.pb.h"     // BlockService
 
 DEFINE_bool(check_term, true, "Check if the leader changed to another term");
 DEFINE_bool(disable_cli, false, "Don't allow raft_cli access this node");

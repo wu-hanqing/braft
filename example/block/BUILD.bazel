@@ -1,0 +1,30 @@
+load("//:bazel/braft.bzl", "braft_proto_library")
+
+braft_proto_library(
+    name = "cc_block_proto",
+    srcs = [
+        "block.proto",
+    ],
+)
+
+cc_binary(
+    name = "block_server",
+    srcs = [
+        "server.cpp",
+    ],
+    deps = [
+        ":cc_block_proto",
+        "//:braft",
+    ],
+)
+
+cc_binary(
+    name = "block_client",
+    srcs = [
+        "client.cpp",
+    ],
+    deps = [
+        ":cc_block_proto",
+        "//:braft",
+    ],
+)
